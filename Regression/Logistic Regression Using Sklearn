@@ -1,0 +1,25 @@
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+#We will use the breast cancer dataset as it is a binary dataset
+cancer_da=datasets.load_breast_cancer()
+cancer_da
+#Tells the data and the feature names with the target the targets here are 0 and 1 as it is binary classification
+clf=LogisticRegression()
+#Using a classifier
+clf.fit(cancer_ds.data,cancer_ds.target)
+#We have given it the training data and we are trying it on the entire training data than splitting it into training and testing data
+clf.predict(cancer_ds.data)
+clf.score(cancer_ds.data,cancer_ds.target)
+#Checking the value of the function for certain points 
+clf.predict(cancer_ds.data)=cancer_ds.target
+#Nonzero values give the incorrect classification
+#To know the probablity of each point that we want to check and test on
+clf.predict_proba(cancer_ds.data)
+#Looking at the probablity of index 3 data points
+clf.predict_proba(cancer_ds.data)[3]
+#It can be observed that the probablity was low for points with garbled results
+#The c value in Logistic Regression function may cause overfitting or underfitting
+#The c value in function may be tweaked around
+#Tolerance value can govern the way function changes by gradient descent
+#Refer Sklearn Documentation for more about the Logistic regression function
+
